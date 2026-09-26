@@ -165,6 +165,17 @@
                     navSections.forEach(function (s) { navObserver.observe(s.el); });
                 }
             }
+
+            // ===== Hero slideshow: ganti class .active tiap 6 detik =====
+            var heroSlides = document.querySelectorAll('.hero-slide');
+            if (heroSlides.length > 1) {
+                var heroCurrent = 0;
+                setInterval(function () {
+                    heroSlides[heroCurrent].classList.remove('active');
+                    heroCurrent = (heroCurrent + 1) % heroSlides.length;
+                    heroSlides[heroCurrent].classList.add('active');
+                }, 6000);
+            }
         });
     </script>
 </body>
