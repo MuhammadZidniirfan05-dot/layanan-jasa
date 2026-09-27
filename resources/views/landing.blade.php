@@ -43,6 +43,6 @@
 @include('partials.sections.faq')
 @include('partials.sections.cta')
 
-@include('partials.footer')
+
 
 @endsection

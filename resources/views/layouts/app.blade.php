@@ -78,7 +78,7 @@
             position: absolute;
             left: 0; right: 100%; bottom: 0;
             height: 2px;
-            background: var(--brand-primary);
+            background: var(--brand-accent);
             transition: right 0.3s ease;
         }
         .nav-link:hover::after,
@@ -86,8 +86,12 @@
         .nav-link.nav-active { opacity: 1 !important; }
     </style>
 </head>
-<body class="antialiased">
-    @yield('content')
+<body class="antialiased min-h-screen flex flex-col">
+    <div class="flex-1">
+        @yield('content')
+    </div>
+
+    @include('partials.footer')
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -178,5 +182,14 @@
             }
         });
     </script>
+    <style>
+    /* ====== JARAK ANTAR SECTION DI HP (0.5 cm) ====== */
+    @media (max-width: 767px) {
+        section:not(#hero) {
+            padding-top: 20px !important;    /* ≈ 0.5 cm */
+            padding-bottom: 20px !important; /* ≈ 0.5 cm */
+        }
+    }
+</style>
 </body>
 </html>
